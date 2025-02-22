@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+
+@layer utilities {
+  /* Chrome, Safari and Opera */
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hidden {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -19,3 +34,75 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.animated-text {
+  display: inline-block;
+  width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 4px solid teal;
+  animation: typing 3s steps(30) infinite, blink 0.75s step-end infinite;
+}
+
+.animate__typing {
+  animation: typing 3s steps(30) infinite, blink 0.75s step-end infinite;
+}
+
+.progress-circle {
+  width: 180px;       
+  height: 180px;       
+  border-radius: 50%;
+  background: conic-gradient(#38b2ac 0deg, #222 0deg);  /* Default background color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: background 1s ease-in-out;  /* Smooth transition */
+}
+
+.progress-circle::before {
+  content: '';
+  position: absolute;
+  width: 130px;        /* Slightly smaller inner circle */
+  height: 130px;       /* Slightly smaller inner circle */
+  background-color: #121212;
+  border-radius: 50%;
+}
+
+.percentage {
+  position: relative;
+  font-size: 24px;  /* Larger font size */
+  font-weight: bold;
+  color: white;
+}
+
+.skills-container {
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  gap: 90px;;  /* Increased space between skill items */
+}
+
+.skill p {
+  font-size: 1.25rem; /* Bigger font for skill name */
+  color: white;
+  margin-top: 1rem;
+}
+
+
+
