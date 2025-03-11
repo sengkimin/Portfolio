@@ -1,6 +1,6 @@
 import { FileText, Code } from "lucide-react"; 
 import Image from "next/image";
-import img from "../public/images/new3.jpg";
+import img from "../public/images/home-removebg-preview.png";
 
 export default function AboutSection() {
   return (
@@ -21,7 +21,7 @@ export default function AboutSection() {
             <Image
               src={img}
               alt="Creative Designer"
-              className="rounded-2xl shadow-md shadow-teal-400 transition-transform duration-500 hover:scale-110 cursor-pointer"
+              className="rounded-2xl shadow-md transition-transform duration-500 hover:scale-110 cursor-pointer"
               layout="fill"
               objectFit="cover"
             />
